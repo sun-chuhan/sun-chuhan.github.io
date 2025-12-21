@@ -3,14 +3,16 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Chuhan — Mathematics, Ph.D.</title>
-  <meta name="description" content="Chuhan Sun — Ph.D. student studying harmonic analysis, recently interested in weighted norm inequalities for fractional integral operators. Includes research, publications and teaching information." />
+  <title>Chuhan Sun — Mathematics, Ph.D.</title>
+  <meta name="description" content="Chuhan Sun — Ph.D. student in Mathematics. Research, publications and contact information." />
   <link rel="stylesheet" href="styles.css" />
-  <!-- MathJax for rendering LaTeX equations -->
+  <!-- MathJax for LaTeX rendering (remove if not needed) -->
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script" async></script>
 </head>
 <body>
-  <header class="site-header">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header" role="banner">
     <div class="container header-grid">
       <div class="brand">
         <h1 class="name">Chuhan Sun</h1>
@@ -20,84 +22,96 @@
       <button id="menu-toggle" aria-expanded="false" aria-controls="main-nav" class="menu-btn">Menu</button>
 
       <nav id="main-nav" class="nav" aria-label="Main navigation">
-        <a href="#about">About</a>
         <a href="#pubs">Publications</a>
-        <a href="#contact">Contact</a>
+        <a href="cv.pdf" download>CV</a>
       </nav>
     </div>
   </header>
 
-  <main>
+  <main id="main">
     <section class="hero container" id="about">
-      <div class="hero-left">
-        <!-- Name is shown in the header; the introductory sentence was removed as requested -->
-        <p class="lead">I study harmonic analysis. Recently I have been interested in weighted norm inequalities for fractional integral operators.</p>
-        <p>
-          <a class="btn" href="#pubs">Papers and preprints</a>
-          <a class="btn ghost" href="cv.pdf" download>Download CV</a>
-        </p>
-        <p class="meta">Zhejiang University and Westlake University · Email: <a href="mailto:sunchuhan@westlake.edu.cn">sunchuhan@westlake.edu.cn</a></p>
+      <!-- Photo on the left (DOM order: photo then text) -->
+      <div class="hero-photo hero-right" aria-hidden="false">
+        <!-- Replace photo.jpg with your real photo -->
+        <img class="profile-photo" src="photo.jpg" alt="Profile photo of Chuhan Sun (placeholder)" />
       </div>
-      <div class="hero-right" aria-hidden="true">
-        <div class="photo-placeholder">photo</div>
+
+      <div class="hero-left">
+        <p class="lead">I am a Ph.D. student at Zhejiang University and Westlake University. My supervisor is Zipeng Wang. I am working on the weighted norm inequality of fractional integral operators.</p>
+        <p class="meta">If you need to contact me, see the contact section below.</p>
       </div>
     </section>
 
     <section class="container" id="pubs">
-      <h3>Publications and Preprints</h3>
+      <h3>Publications</h3>
       <ol class="pub-list">
         <li>
-          <a class="pub-title" href="https://doi.org/10.48550/arXiv.2412.19528" target="_blank" rel="noopener">
-            <strong>On the end-point of Stein-Weiss inequality</strong>
+          <a class="pub-title" href="https://doi.org/10.48550/arXiv.2412.19528" target="_blank" rel="noopener noreferrer">
+            <strong>On the end-point of Stein–Weiss inequality</strong>
           </a>
           <span class="pub-meta">, arXiv:2412.19528.</span>
         </li>
         <li>
-          <a class="pub-title" href="https://doi.org/10.48550/arXiv.2510.13411" target="_blank" rel="noopener">
-            <strong>Multi-parameter fractional integration on Heisenberg group</strong>
+          <a class="pub-title" href="https://doi.org/10.48550/arXiv.2510.13411" target="_blank" rel="noopener noreferrer">
+            <strong>Multi-parameter fractional integration on the Heisenberg group</strong>
           </a>
           <span class="pub-meta">, arXiv:2510.13411.</span>
         </li>
-         <li>
-          <a class="pub-title" href="https://doi.org/10.48550/arXiv.2511.00845" target="_blank" rel="noopener">
-            <strong>Stein-Weiss inequality revisit on Heisenberg group</strong>
+        <li>
+          <a class="pub-title" href="https://doi.org/10.48550/arXiv.2511.00845" target="_blank" rel="noopener noreferrer">
+            <strong>Stein–Weiss inequality revisited on the Heisenberg group</strong>
           </a>
           <span class="pub-meta">, arXiv:2511.00845.</span>
         </li>
-        <!-- Add more publications in the same format if needed -->
       </ol>
-
     </section>
 
     <section class="container" id="contact">
       <h3>Contact</h3>
       <p>Email: <a href="mailto:sunchuhan@westlake.edu.cn">sunchuhan@westlake.edu.cn</a></p>
-      <p>ResearchGate: <a href="https://www.researchgate.net/profile/Chuhan-Sun-2" target="_blank" rel="noopener">https://www.researchgate.net/profile/Chuhan-Sun-2</a></p>
+      <p>ResearchGate: <a href="https://www.researchgate.net/profile/Chuhan-Sun-2" target="_blank" rel="noopener noreferrer">Chuhan Sun</a></p>
     </section>
   </main>
 
-  <footer class="site-footer">
+  <footer class="site-footer" role="contentinfo">
     <div class="container footer-grid">
       <small>© <span id="year"></span> Chuhan Sun — Built with HTML &amp; CSS</small>
       <nav class="foot-links" aria-label="Footer">
-        <a href="#about">About</a>
         <a href="#pubs">Publications</a>
-        <a href="#contact">Contact</a>
+        <a href="cv.pdf" download>CV</a>
       </nav>
     </div>
   </footer>
 
   <script>
-    // Update year dynamically
+    // Current year
     document.getElementById('year').textContent = new Date().getFullYear();
 
-    // Mobile menu toggle
+    // Mobile menu toggle and accessible behavior
     const menuBtn = document.getElementById('menu-toggle');
     const nav = document.getElementById('main-nav');
+
+    function setMenuOpen(open) {
+      menuBtn.setAttribute('aria-expanded', String(open));
+      nav.classList.toggle('open', open);
+    }
+
     menuBtn.addEventListener('click', () => {
       const expanded = menuBtn.getAttribute('aria-expanded') === 'true';
-      menuBtn.setAttribute('aria-expanded', String(!expanded));
-      nav.classList.toggle('open');
+      setMenuOpen(!expanded);
+    });
+
+    // Close menu when clicking outside (mobile)
+    document.addEventListener('click', (e) => {
+      const target = e.target;
+      if (!nav.contains(target) && target !== menuBtn) {
+        setMenuOpen(false);
+      }
+    });
+
+    // Close menu on Escape
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') setMenuOpen(false);
     });
   </script>
 </body>
