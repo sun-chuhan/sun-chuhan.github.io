@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Chuhan — Mathematics, Ph.D.</title>
+  <meta name="description" content="孙楚涵 — 研究代数几何与数论的数学博士。包含研究、论文与教学信息。" />
+  <link rel="stylesheet" href="styles.css" />
+  <!-- MathJax 用于渲染 LaTeX 公式 -->
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script" async></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-grid">
+      <div class="brand">
+        <h1 class="name">Chuhan Sun</h1>
+        <p class="subtitle">A Ph.D student in Math.</p>
+      </div>
+
+      <button id="menu-toggle" aria-expanded="false" aria-controls="main-nav" class="menu-btn">菜单</button>
+
+      <nav id="main-nav" class="nav" aria-label="主导航">
+        <a href="#about">关于</a>
+        <a href="#research">研究</a>
+        <a href="#pubs">论文</a>
+        <a href="#teaching">教学</a>
+        <a href="#contact">联系</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero container" id="about">
+      <div class="hero-left">
+        <h2>I am Chuhan Sun.</h2>
+        <p class="lead">I study harmonic analysis. I interest in the weighted norm inequality of gractional integral operators recently.</p>
+        <p>
+          <a class="btn" href="#research">papers and preprints</a>
+          <a class="btn ghost" href="cv.pdf" download>my CV.</a>
+        </p>
+        <p class="meta">Zhejiang University and Westlake University · 邮箱：<sunchuhan@westlake.edu.cn></p>
+      </div>
+      <div class="hero-right" aria-hidden="true">
+        <div class="photo-placeholder">photo </div>
+      </div>
+    </section>
+
+    <section class="container" id="pubs">
+      <h3>Papers and Preprints</h3>
+      <ol class="pub-list">
+        <li>
+          <a class="pub-title" href="https://doi.org/10.48550/arXiv.2412.19528" target="_blank" rel="noopener">
+            <strong>On the end-point of Stein-Weiss inequality</strong>
+          </a>
+          <span class="pub-meta">, arXiv:2412.19528.</span>
+        </li>
+        <li>
+          <a class="pub-title" href="https://doi.org/10.48550/arXiv.2510.13411" target="_blank" rel="noopener">
+            <strong>Multi-parameter fractional integration on Heisenberg group</strong>
+          </a>
+          <span class="pub-meta">, arXiv:2510.13411.</span>
+        </li>
+         <li>
+          <a class="pub-title" href="https://doi.org/10.48550/arXiv.2511.00845" target="_blank" rel="noopener">
+            <strong>Stein-Weiss inequality revisit on Heisenberg group</strong>
+          </a>
+          <span class="pub-meta">, arXiv:2511.00845.</span>
+        </li>
+        <!-- 如需更多论文，按此格式添加 -->
+      </ol>
+
+      <!-- <p><a class="link" href="#" target="_blank" rel="noopener">完整论文列表（Google Scholar）</a></p> -->
+    </section>
+
+    <section class="container" id="contact">
+      <h3>Contact</h3>
+      <p>email：sunchuhan@westlake.edu.cn</p>
+      <p>researchgate：<a href="https://www.researchgate.net/profile/Chuhan-Sun-2" target="_blank" rel="noopener">https://www.researchgate.net/profile/Chuhan-Sun-2</a></p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <small>© <span id="year"></span> Chuhan Sun — Built with HTML &amp; CSS</small>
+      <nav class="foot-links" aria-label="Footer">
+        <a href="#about">关于</a>
+        <a href="#pubs">论文</a>
+        <a href="#contact">联系</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script>
+    // 当前年份
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // 手机端菜单开关
+    const menuBtn = document.getElementById('menu-toggle');
+    const nav = document.getElementById('main-nav');
+    menuBtn.addEventListener('click', () => {
+      const expanded = menuBtn.getAttribute('aria-expanded') === 'true';
+      menuBtn.setAttribute('aria-expanded', String(!expanded));
+      nav.classList.toggle('open');
+    });
+  </script>
+</body>
+</html>
