@@ -11,6 +11,7 @@
   font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans";
 }
 
+
 *{box-sizing:border-box}
 html,body{height:100%}
 body{margin:0;color:var(--text);background:var(--bg);line-height:1.6;-webkit-font-smoothing:antialiased}
@@ -84,6 +85,16 @@ h3{margin:.25rem 0 1rem;font-size:1.1rem}
 .bullets{padding-left:1.25rem;color:var(--muted)}
 .pub-list{padding-left:1.1rem}
 .pub-list li{margin-bottom:.9rem}
+/* Publication title links: black, academic style */
+.pub-title {
+  color: #000;
+  text-decoration: none;
+}
+
+.pub-title:hover {
+  text-decoration: underline;
+}
+
 .pub-abs{margin:.25rem 0;color:var(--muted);font-size:.95rem}
 
 .link{color:var(--accent);text-decoration:none}
