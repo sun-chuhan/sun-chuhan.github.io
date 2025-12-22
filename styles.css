@@ -97,7 +97,7 @@ h3{margin:.25rem 0 1rem;font-size:1.1rem}
 
 .pub-abs{margin:.25rem 0;color:var(--muted);font-size:.95rem}
 
-.link{color:var(--accent);text-decoration:none}
+.link{color:var(--text);text-decoration:none}
 
 /* Footer */
 .site-footer{border-top:1px solid #eee;padding:1rem 0;margin-top:2rem;color:var(--muted)}
@@ -109,4 +109,13 @@ h3{margin:.25rem 0 1rem;font-size:1.1rem}
 }
 
 /* Small fixes */
-a{word-break:break-word}
+a{
+  color: var(--text);        /* 黑色 */
+  text-decoration: none;
+  word-break: break-word;
+}
+
+a:hover,
+a:focus{
+  text-decoration: underline;
+}
