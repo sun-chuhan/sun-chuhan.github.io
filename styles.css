@@ -83,8 +83,30 @@ body{margin:0;color:var(--text);background:var(--bg);line-height:1.6;-webkit-fon
 section{padding:1.25rem 0}
 h3{margin:.25rem 0 1rem;font-size:1.1rem}
 .bullets{padding-left:1.25rem;color:var(--muted)}
-.pub-list{padding-left:1.1rem}
-.pub-list li{margin-bottom:.9rem}
+
+/* Publication list: 显示为圆点而非数字（如果 HTML 仍为 <ol>，此处通过样式覆盖数字显示）
+   建议语义上如果条目无顺序含义可把 <ol> 改为 <ul>，但以下样式在不改 HTML 情况下也会显示圆点 */
+.pub-list{
+  /* 将序号替为圆点 */
+  list-style-type: disc;
+  list-style-position: outside; /* marker 在外面（可改为 inside） */
+  margin: 0 0 1.25rem 1.25rem;  /* 上右下左：给左侧缩进让圆点可见 */
+  padding-left: 0;
+}
+.pub-list li{
+  margin-bottom:.9rem;
+  /* 确保条目文字与圆点对齐 */
+  line-height:1.5;
+  /* 如需微调缩进，可调整下面的 padding */
+  padding-left: 0.15rem;
+}
+
+/* 美化 marker（现代浏览器支持） */
+.pub-list li::marker {
+  color: var(--muted);
+  font-size: 1em;
+}
+
 /* Publication title links: black, academic style */
 .pub-title {
   color: #000;
